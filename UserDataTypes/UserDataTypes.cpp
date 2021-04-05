@@ -2,37 +2,31 @@
 //
 
 #include <iostream>
+#include "Employee.h"
+using namespace std;
 
-class Sandwich
-{
-public:
-    void Display() { std::cout << "Price: $" << price << std::endl; }
-
-public:
-    char name[32];
-    float price;
-    bool isHot;
-};
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	Employee employees[5];
+	unsigned short numEmployees;
+	cout << "Number of Employees: ";
+    cin >> numEmployees;
+    while (cin.fail()) {
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cout << "Please enter a valid number: " << endl;
+        cin >> numEmployees;
+    }
 
-    Sandwich turkey;
-    turkey.price = 4.99f;
-    turkey.isHot = true;
-    turkey.Display();
+    for (int i = 0; i < numEmployees; i++) {
+        employees[i].Read();
+    }
 
-    int i = 5;
-    char c = 34;
-
-    i = c;
-
-    float f = 23.4f; // 4 bits
-    double d = 34.5; // 8 bits
-
-    f = static_cast<float>(d);
-    f = (float)d;
+    for (int i = 0; i < numEmployees; i++) {
+        employees[i].Write();
+        cout << "---" << endl;
+    }
 
 }
 
