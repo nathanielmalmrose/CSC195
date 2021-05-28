@@ -1,0 +1,16 @@
+1
+Bird1
+1
+1
+1
+Bird2
+2
+2
+2
+Mammal1
+1
+1
+2
+Mammal2
+2
+2
